@@ -11,7 +11,7 @@ ReactDOM.render(
   <Auth0Provider
     domain={domain}
     clientId={clientId}
-    redirectUri={window.location.origin}
+    redirectUri={'http://localhost:3000'}
     audience={`https://${domain}/api/v2/`}
     scope="read:todo write:todo delete:todo"
   >
