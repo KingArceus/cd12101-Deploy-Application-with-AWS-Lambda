@@ -38,7 +38,7 @@ export class TodosAccess {
                 TableName: this.todosTable,
                 Item: todoItem
             })
-
+        logger.info('todoItem')
         return todoItem
     }
 

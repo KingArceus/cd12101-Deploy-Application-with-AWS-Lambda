@@ -17,8 +17,8 @@ export async function createTodo(newTodo, userId) {
     const todoId = uuid.v4()
     const createdAt = new Date().toISOString()
     const attachmentUrl = generateAttachmentUrl(todoId)
-
-    return await todosAccess.createTodo({
+    
+    const response = await todosAccess.createTodo({
         userId,
         todoId,
         createdAt,
@@ -26,6 +26,8 @@ export async function createTodo(newTodo, userId) {
         attachmentUrl: attachmentUrl,
         ...newTodo
     })
+    logger.info(response)
+    return response
 }
 
 export async function updateTodo(userId, todoId, updatedTodo) {

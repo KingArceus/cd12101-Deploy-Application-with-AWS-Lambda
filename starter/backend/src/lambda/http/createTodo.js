@@ -22,7 +22,7 @@ export const handler = middy ()
       Data: ${newTodo}
       ID: ${userId}`)
     const newItem = await createTodo(newTodo, userId)
-
+    logger.info(newItem)
     return {
       statusCode: 201,
       body: JSON.stringify({
