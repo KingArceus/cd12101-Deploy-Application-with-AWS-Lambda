@@ -22,17 +22,7 @@ provider:
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
     ATTACHMENTS_S3_BUCKET: todos-app-attachments-kin9-${self:provider.stage}
     PROJECT_NAME: serverless-todo-app
-
-  iam:
-    role:
-      statements:
-        - Effect: 'Allow'
-          Action:
-            - 'xray:PutTraceSegments'
-            - 'xray:PutTelemetryRecords'
-          Resource:
-            - '*'
-
+    
 functions:
 
   Auth:
